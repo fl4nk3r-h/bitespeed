@@ -7,7 +7,7 @@
 
 A Spring Boot REST API that links customer identities across multiple purchases — even when different emails and phone numbers are used. Built for the [BiteSpeed Backend Task: Identity Reconciliation](https://bitespeed.co/).
 
-**Live endpoint:** `https://YOUR-APP.onrender.com/identify`
+**Live endpoint:** `https://bitespeed-6rij.onrender.com`
 
 ---
 
