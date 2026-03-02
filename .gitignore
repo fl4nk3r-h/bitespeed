@@ -39,3 +39,6 @@ build/
 .git/
 .history/
 .fake
+
+### docs ###
+docs/

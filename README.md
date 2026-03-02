@@ -365,15 +365,17 @@ curl http://localhost:8080/health
 
 ## Deploying on Render.com
 
-1. Push repo to GitHub.
+> Render no longer supports native Java runtimes — use the **Docker** environment.
+
+1. Push repo to GitHub (ensure `.env` is gitignored).
 2. Create a new **Web Service** on [Render](https://render.com/), connect the repo.
-3. Set **Build Command:** `./mvnw clean package -DskipTests`
-4. Set **Start Command:** `java -jar target/bitespeed-0.0.1-SNAPSHOT.jar`
-5. Add environment variables in Render dashboard:
+3. Set **Environment** to **Docker** (Render auto-detects the `Dockerfile`).
+4. Add environment variables in the Render dashboard:
    - `DATABASE_URL` → your PostgreSQL JDBC URL (e.g. from Neon.tech)
    - `DATABASE_USERNAME`
    - `DATABASE_PASSWORD`
-6. Add a free PostgreSQL database ([Neon.tech](https://neon.tech/) recommended for free tier).
+5. Deploy — Render will build the multi-stage Docker image and start the container.
+6. The app listens on `$PORT` (Render injects this automatically).
 
 ---
 
